@@ -1,7 +1,7 @@
 {
   "name": "array-merge-by-key",
   "version": "1.0.0",
-  "description": "Effectively merge two or more arrays of objects into a single array by merging objects with the same key (property).",
+  "description": "Effectively merge arrays of objects into a single array by merging objects with the same key (property).",
   "main": "index.js",
   "engines": {
     "node": ">=4"

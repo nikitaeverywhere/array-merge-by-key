@@ -4,8 +4,8 @@
 [![License](https://img.shields.io/github/license/zitros/array-merge-by-key.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/ZitRos/array-merge-by-key.svg?branch=master)](https://travis-ci.org/ZitRos/array-merge-by-key)
 
-Effectively merge two or more arrays of objects into a single array by merging objects with the same 
-key (property). Module can also be used to merge object with the same property value in the array. 
+Effectively merge arrays of objects into a single array by merging objects with the same key 
+(property). Module can also be used to merge object with the same property value in one array. 
 
 This is a micro module, which includes light and well-tested code.
 
@@ -44,12 +44,12 @@ Usage
 Module `array-merge-by-key` exports function `mergeByKey(key, array1, array2, ...)` by default.
 Module uses `Object.assign` to merge two objects having the same key value. The assignment will be
 performed *from right to left*, which means that the most right passed array will have priority over
-previous ones. The comparison of keys is strict (`===` operator). The order of elements in resulting
-array is the same of how they appear from left to right argument, from start to the end of arrays.
-Objects that do not have a key (property) will not be merged with others. The new (merged) objects
-are the new ones (does not mutate old ones).
+previous ones. The comparison of key values is strict (`===` operator). The order of elements in
+resulting array is the same as they appear from *left to right* argument, from the first to the last
+element of arrays. Objects that do not have a key (property) will not be merged with others and 
+references to them will not change. The new (merged) objects does not mutate old ones.
 
-Objects having same key values in the same array also merge, or, in other words,
+Objects having same key values in the same array also merge. For example:
 
 ```javascript
 mergeByKey("id", [{ id: 1, test: "54" }, { id: 1, test: "76" }])
