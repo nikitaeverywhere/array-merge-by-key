@@ -10,7 +10,7 @@
 module.exports = function (key, arrays) {
 
     const array = [];
-    const groups = new Map; // key => [pos in array, [array, of, objects, with, the, same, key]]
+    const groups = new Map(); // key => [pos in array, [array, of, objects, with, the, same, key]]
 
     for (let i = 1; i < arguments.length; ++i) {
         for (let j = 0; j < arguments[i].length; ++j) {
@@ -29,10 +29,10 @@ module.exports = function (key, arrays) {
         }
     }
 
-    for (let [, [pos, elements]] of groups) {
-        if (elements.length === 0)
+    for (let group of groups) {
+        if (group[1][1].length === 0)
             continue;
-        array[pos] = Object.assign({}, array[pos], ...elements);
+        array[group[1][0]] = Object.assign({}, array[group[1][0]], ...group[1][1]);
     }
 
     return array;
