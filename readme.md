@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/ZitRos/array-merge-by-key.svg?branch=master)](https://travis-ci.org/ZitRos/array-merge-by-key)
 
 Effectively merge arrays of objects into a single array by merging objects with the same key 
-(property). Module can also be used to merge object with the same property value in one array. 
+(property). Also use this module to merge objects with the same property value in one array. 
 
 This is a micro module, which includes light and well-tested code.
 
@@ -42,14 +42,15 @@ Usage
 -----
 
 Module `array-merge-by-key` exports function `mergeByKey(key, array1, array2, ...)` by default.
-Module uses `Object.assign` to merge two objects having the same key value. The assignment will be
-performed *from right to left*, which means that the most right passed array will have priority over
-previous ones. The comparison of key values is strict (`===` operator). The order of elements in
-resulting array is the same as they appear from *left to right* argument, from the first to the last
-element of arrays. Objects that do not have a key (property) will not be merged with others and 
-references to them will not change. The new (merged) objects does not mutate old ones.
+Module uses `Object.assign` to merge two objects having the same key (property) value. The 
+assignment is performed *from right to left*, which means that the most right passed array will have 
+priority over previous ones. The comparison of key values is strict (`===` operator). The order of 
+elements in resulting array is the same as they appear in arguments, from *left to right*, from the 
+first to the last element of arrays. Objects that do not have a key (property) will never be merged 
+with others and will have the same memory reference. The new (merged) objects does not mutate old 
+ones. The new array does not mutate any of passed arrays.
 
-Objects having same key values in the same array also merge. For example:
+Objects having the same key values in the same array also merge. For example:
 
 ```javascript
 mergeByKey("id", [{ id: 1, test: "54" }, { id: 1, test: "76" }])

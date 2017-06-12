@@ -102,6 +102,20 @@ test(`Mutates unchanged objects and does not mutate merged objects`, (it) => {
 
 });
 
+test(`Does not mutate any of passed arrays`, (it) => {
+
+    const obj1 = { superKey: 5, test: "hi" };
+    const obj2 = { superKey: 7, test: "this" };
+    const obj3 = { superKey: 7, test: "is" };
+    const obj4 = { superKey: 9, test: "a test" };
+    const arr1 = [obj1, obj2];
+    const arr2 = [obj3, obj4];
+    const result = mergeByKey("superKey", arr1, arr2);
+
+    it.is(arr1 !== result && arr2 !== result, true, `Must not mutate arr1 or arr2`);
+
+});
+
 test(`Works with 3 arrays`, (it) => {
 
     const arr1 = [{ superKey: 5, test: "hi" }];

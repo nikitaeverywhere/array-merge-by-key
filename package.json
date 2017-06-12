@@ -1,6 +1,6 @@
 {
   "name": "array-merge-by-key",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Effectively merge arrays of objects into a single array by merging objects with the same key (property).",
   "main": "index.js",
   "engines": {
@@ -17,6 +17,20 @@
     "name": "ZitRo",
     "url": "nikita.tk"
   },
+  "keywords": [
+    "array",
+    "merge",
+    "objects",
+    "by",
+    "key",
+    "property",
+    "value",
+    "javascript",
+    "arrays",
+    "combine",
+    "two",
+    "objects"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ZitRos/array-merge-by-key/issues"
